@@ -13,19 +13,16 @@ int main(void)
 	char *line = NULL;
 	ssize_t read;
 	pid_t pid;
-	struct stat buf;
+	/*struct stat buf;*/
 
-	fstat(STDIN_FILENO, &buf);
+	/*fstat(STDIN_FILENO, &buf);
 
 	if ((S_ISCHR) st. mode)
 	{
 		write(STDOUT_FILENO, PROMPT, strlen(PROMPT));
-	}
-	/*printf("$ ");*/
-	read = getline(&line, &len, stdin);
-	if (read == -1)
-		return (-1);
-	/*while(line != NULL)*/
+	}*/
+	printf("$ ");
+	while ((read = getline(&line, &len, stdin)) != -1)
 	{
 		tokens = strtok(line, " \n\t\r");
 		while (tokens != NULL)
@@ -42,9 +39,15 @@ int main(void)
 		if (pid == -1)
 			perror("fork");
 		if (pid == 0)
+		{
 			execve(store_toks[0], store_toks, NULL);
+			free(line);
+		}
 		else
+		{
 			wait(&status);
+		}
+		printf("$ ");
 	}
 	return (0);
 }
