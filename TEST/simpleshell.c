@@ -7,7 +7,7 @@
  **/
 int main(void)
 {
-	int i, status;
+	int i = 0, status;
 	size_t len = 0;
 	char *tokens, *store_toks[1024];
 	char *line = NULL;
@@ -25,6 +25,7 @@ int main(void)
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
 		tokens = strtok(line, " \n\t\r");
+		i = 0;
 		while (tokens != NULL)
 		{
 			store_toks[i] = tokens;
@@ -49,5 +50,6 @@ int main(void)
 		}
 		printf("$ ");
 	}
+	free(line);
 	return (0);
 }
