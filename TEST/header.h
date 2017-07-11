@@ -7,7 +7,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-/*#define PROMPT "$ "*/
+#define PROMPT "$ "
 
 extern char **environ;
 void prompt(void);
