@@ -14,7 +14,7 @@ int main(void)
 	char *line = NULL;
 	ssize_t read;
 	pid_t pid;
-	struct stat buf;
+	/*struct stat buf;*/
 
 	/*fstat(STDIN_FILENO, &buf);
 
@@ -28,7 +28,7 @@ int main(void)
 	}*/
 	/*if (S_IFCHR(buf.st_mode))
 	{
-		write(STDOUT_FILENO, PROMPT, strlen(PROMPT));
+		write(STDOUT_FILENO, &PROMPT, strlen(PROMPT));
 	}*/
 	/*printf("$ ");*/
 	while ((read = getline(&line, &len, stdin)) != -1)
