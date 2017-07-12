@@ -52,6 +52,8 @@ int main(void)
 		{
 			printf("in child process");
 			store_execve = execve(store_toks[0], store_toks, NULL);
+			if (store_execve == -1)
+				return (-1);
 			free(line);
 		}
 		else
