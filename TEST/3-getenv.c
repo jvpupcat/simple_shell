@@ -5,7 +5,7 @@
  *
  * Return: none
  **/
-int main(void)
+char *_getenv(const char *name)
 {
 	char **env;
 

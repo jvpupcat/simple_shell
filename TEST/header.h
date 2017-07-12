@@ -15,6 +15,7 @@ void prompt(void);
 
 /* HELPER FUNCTIONS */
 int _strlen(char *str);
+void _puts(char *str);
 
 /* MAIN FUNCTIONS */
 int _strtok(char *str);
