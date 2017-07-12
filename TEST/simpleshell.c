@@ -30,7 +30,7 @@ int main(void)
 	{
 		write(STDOUT_FILENO, &PROMPT, strlen(PROMPT));
 	}*/
-	/*printf("$ ");*/
+	printf("$ ");
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
 		tokens = strtok(line, " \n\t\r");
@@ -41,6 +41,7 @@ int main(void)
 			tokens = strtok(NULL, " \n\t\r");
 			i++;
 		}
+		store_toks[i] = NULL;
 		/*if (strcmp(store_toks[i], builtin.value) == 0)
 		{
 			something something;
@@ -50,7 +51,7 @@ int main(void)
 			perror("fork");
 		if (pid == 0)
 		{
-			printf("in child process");
+			/*printf("in child process");*/
 			store_execve = execve(store_toks[0], store_toks, NULL);
 			if (store_execve == -1)
 				return (-1);
@@ -63,5 +64,6 @@ int main(void)
 		printf("$ ");
 	}
 	free(line);
+	printf("%s", line);
 	return (0);
 }
