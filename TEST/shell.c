@@ -12,7 +12,7 @@ int main(int ac, char *av[])
 	int i, status, success;
 	pid_t pid;
 
-	printf("$ ");
+	prompt();
 	while ((success = getline(&ptr, &num, stdin) != -1))
 	{
 		tokens = strtok(ptr," \n\t\r");
@@ -21,6 +21,7 @@ int main(int ac, char *av[])
 			store[i] = tokens;
 			tokens = strtok(NULL, " \n\t\r");
 		}
+		store[i] = NULL;
 		pid = fork();
 		if (pid == -1)
 			perror("fork");
@@ -34,7 +35,7 @@ int main(int ac, char *av[])
 		{
 			wait(&status);
 		}
-	printf("$ ");
+	prompt();
 	}
 	return (0);
 }

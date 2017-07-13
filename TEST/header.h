@@ -7,7 +7,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#define PROMPT "$ "
 typedef struct environment_variable
 {
 	char *name;
