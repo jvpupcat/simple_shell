@@ -8,10 +8,16 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #define PROMPT "$ "
+typedef struct environment_variable
+{
+	char *name;
+	char *value;
+	struct environment_variable *next;
+} env_v;
 
 extern char **environ;
 void prompt(void);
-
+char *_getenv(const char *name);
 /* HELPER FUNCTIONS */
 int _strlen(char *str);
 
