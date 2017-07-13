@@ -19,5 +19,6 @@ void _puts(char *str);
 
 /* MAIN FUNCTIONS */
 int _strtok(char *str);
+char *_getenv(const char *name);
 
 #endif

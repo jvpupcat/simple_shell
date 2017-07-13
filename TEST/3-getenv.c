@@ -7,9 +7,18 @@
  **/
 char *_getenv(const char *name)
 {
-	char **env;
+	int compare, i;
+	char *token;
 
-	for (env = environ; *env != NULL; env++)
-		puts(*env);
-	return (0);
+	for (i = 0; environ[i] != '\0'; i++)
+	{
+		token = strtok(environ[i], "=");
+		compare = strcmp(name, token);
+		if (compare == 0)
+		{
+			token = strtok(NULL, "\0");
+			return (token);
+		}
+	}
+	return (token);
 }
