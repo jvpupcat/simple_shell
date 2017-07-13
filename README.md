@@ -19,9 +19,9 @@ vagrant@vagrant-ubuntu-trusty-64:~$ gcc -Wall -Werror -Wextra -pedantic simplesh
 vagrant@vagrant-ubuntu-trusty-64:~$ ./simpleshell
 $ 
 ```
-Markup : 1. Compile with `gcc -Wall -Werror -Wextra -pedantic simpleshell.c -o simpleshell`
-	2. To run, type `./simpleshell`
-	3. A prompt should appear. For Stemshell, the prompt is '$'.
+1. Compile with `gcc -Wall -Werror -Wextra -pedantic simpleshell.c -o simpleshell`
+2. To run, type `./simpleshell`
+3. A prompt should appear. For Stemshell, the prompt is '$'.
 
 For example:
 
