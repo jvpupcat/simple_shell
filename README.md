@@ -21,14 +21,15 @@ $
 ```
 1. Compile with `gcc -Wall -Werror -Wextra -pedantic simpleshell.c -o simpleshell`
 2. To run, type `./simpleshell`
-3. A prompt should appear. For Stemshell, the prompt is '$'.
+3. A prompt should appear. For Stemshell, the prompt is '$'
+4. At the prompt, type in command `/bin/ls` or `/bin/ls -l`
 
 For example:
 
 ```
 $ /bin/ls
 test.c test1.c
-$ /bin/ls
+$ /bin/ls -l
 -rw-rw-r-- 1 vagrant vagrant 122 July 12 23:47 test.c
 -rw-rw-r-- 1 vagrant vagrant 122 July 12 23:47 test1.c
 ```
