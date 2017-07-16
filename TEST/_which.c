@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "header.h"
 
 /**
  * _which - function that checks for user permission
@@ -11,9 +11,10 @@ char *_which(char *command)
 	char *append_slash, *append_ls, *copy_path = NULL;
 	int i;
 	/*struct stat st;*/
+
 	copy_path = copy_path;
 	path = _getenv("PATH");
-	copy_path = _strcpy(copy_path, path);
+	copy_path = _strdup(path);
 	tokens = strtok(copy_path, "=");
 	printf("%s", tokens);
 
