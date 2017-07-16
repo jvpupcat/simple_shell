@@ -1,36 +1,21 @@
 #include "header.h"
 
 /**
+ * main - program that calls in other functions
  *
- *
- *
+ * Return: 0 upon success
  **/
 int main(void)
 {
 	int i = 0, status;
 	size_t len = 0;
-	char *tokens, *store_toks[1024];
+	char *store_toks[1024],*tokens;
 	int store_execve;
 	char *line = NULL;
 	ssize_t read;
 	pid_t pid;
-	/*struct stat buf;*/
 
-	/*fstat(STDIN_FILENO, &buf);
-
-	switch (buf.st_mode & S_IFMT)
-	{
-		case S_IFCHR:
-			printf("$ ");
-			break;
-		default:
-			break;
-	}*/
-	/*if (S_IFCHR(buf.st_mode))
-	{
-		write(STDOUT_FILENO, &PROMPT, strlen(PROMPT));
-	}*/
-	printf("$ ");
+	prompt();
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
 		tokens = strtok(line, " \n\t\r");
@@ -42,6 +27,8 @@ int main(void)
 			i++;
 		}
 		store_toks[i] = NULL;
+		builtin_id(store_toks[0]);
+		/* CHECK BUILTINS */
 		/*if (strcmp(store_toks[i], builtin.value) == 0)
 		{
 			something something;
@@ -51,7 +38,6 @@ int main(void)
 			perror("fork");
 		if (pid == 0)
 		{
-			/*printf("in child process");*/
 			store_execve = execve(store_toks[0], store_toks, NULL);
 			if (store_execve == -1)
 				return (-1);
@@ -61,9 +47,8 @@ int main(void)
 		{
 			wait(&status);
 		}
-		printf("$ ");
+		prompt();
 	}
 	free(line);
-	printf("%s", line);
 	return (0);
 }

@@ -19,7 +19,7 @@ vagrant@vagrant-ubuntu-trusty-64:~$ gcc -Wall -Werror -Wextra -pedantic simplesh
 vagrant@vagrant-ubuntu-trusty-64:~$ ./simpleshell
 $ 
 ```
-1. Compile with `gcc -Wall -Werror -Wextra -pedantic simpleshell.c -o simpleshell`
+1. Compile with `gcc -Wall -Werror -Wextra -pedantic *.c -o stemshell`
 2. To run, type `./simpleshell`
 3. A prompt should appear. For Stemshell, the prompt is '$'
 4. At the prompt, type in command `/bin/ls` or `/bin/ls -l`
@@ -33,3 +33,11 @@ $ /bin/ls -l
 -rw-rw-r-- 1 vagrant vagrant 122 July 12 23:47 test.c
 -rw-rw-r-- 1 vagrant vagrant 122 July 12 23:47 test1.c
 ```
+### Search and Execution
+There are three types of commands: shell functions, builtin commands, and normal programs and the command is searched by name in that order. They are executed in different ways.
+
+When the shell function is executed, all the shell positional parameters are set to the arguments of the shell function. In order for the shell to execute commands, it must first take in the arguments, tokenize, check for builtins and alias before forking to process the command.
+
+Shell builtins are executed internally to the shell, without spawning a new process. Currently, the StemShell can only handle the builtin function exit.
+
+Other
