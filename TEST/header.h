@@ -19,9 +19,12 @@ void _puts(char *str);
 int _putchar(char c);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
 
 /* MAIN FUNCTIONS */
 char *_getenv(const char *name);
+void builtin_id(char *command);
+char *_which(char *command);
 
 /* BUILTIN FUNCTIONS */
 /**
@@ -35,7 +38,6 @@ typedef struct builtin_s
 	char *id;
 	int (*function)();
 } builtin_t;
-void builtin_id(char *command);
 int sh_exit(void);
 int env(void);
 

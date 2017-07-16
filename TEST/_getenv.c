@@ -3,7 +3,7 @@
 /**
  * _getenv - function that gets the environment
  *
- * Return: none
+ * Return: token
  **/
 char *_getenv(const char *name)
 {
