@@ -1,4 +1,4 @@
-## The StemShell
+# The StemShell
 
 <img src="https://gdcf-0916001bcltd.netdna-ssl.com/wp-content/uploads/2016/08/STEM-illustration.jpg?x18098">
 
@@ -52,3 +52,66 @@ Shell builtins are executed internally to the shell, without spawning a new proc
 * No more than 5 functions per file
 * All your header files should be include guarded
 ```
+
+### Allowed Functions
+
+```
+* access (man 2 access)
+* chdir (man 2 chdir)
+* close (man 2 close)
+* closedir (man 3 closedir)
+* execve (man 2 execve)
+* exit (man 3 exit)
+* fork (man 2 fork)
+* free (man 3 free)
+* stat (__xstat) (man 2 stat)
+* lstat (__lxstat) (man 2 lstat)
+* fstat (__fxstat) (man 2 fstat)
+* getcwd (man 3 getcwd)
+* getline (man 3 getline)
+* kill (man 2 kill)
+* malloc (man 3 malloc)
+* open (man 2 open)
+* opendir (man 3 opendir)
+* perror (man 3 perror)
+* read (man 2 read)
+* readdir (man 3 readdir)
+* signal (man 2 signal)
+* strtok (man 3 strtok)
+* wait (man 2 wait)
+* waitpid (man 2 waitpid)
+* wait3 (man 2 wait3)
+* wait4 (man 2 wait4)
+* write (man 2 write)
+* _exit (man 2 _exit)
+* isatty (man 3 isatty)
+* fflush (man 3 fflush)
+```
+
+### Description of File Structure
+
+0. [AUTHORS](AUTHORS) - Name of the authors who wrote the simple shell.
+1. [header.h](header.h) - Header file that contains all structs, macros, standard library, and function prototypes.
+2. [builtin_id.c](builtin_id.c) - file that contains the following builtin functions:
+	* ``sh_exit`` - exits the shell.
+	* ``env`` - prints the current environment.
+3. [helper_functions.c](helper_functions.c) - file that contains the following helper functions:
+	* ``_strlen`` - function that counts the length of a string.
+	* ``_strcat`` - function that concatenates two strings.
+	* ``_puts`` - function that prints 1 character at a time.
+	* ``_putchar`` - function that prints 1 character at a time. Returns an int.
+	* ``_strdup`` - function that returns pointer to a newly allocated space in memory.
+4. [helper_functions2.c](helper_functions2.c) - file that contains the following helper functions:
+	* ``_strcmp`` - function that compares strings.
+5. [prompt.c](prompt.c) - function that prints the prompt "$".
+6. []()
+7. [man_1_simple_shell](man_1_simple_shell) - file that contains the man page for StemShell
+8. [README.md](README.md) - files that contains the description for the assignment. Example of how to use Stemshell is included.
+
+## Known Bugs
+- [x] When enter is hit without any user input, shell segfaults
+- [x] Memory leaks exist - check valgrind
+
+## Authors
+* **Joann Vuong** [LinkedIn](https://www.linkedin.com/in/joann-vuong-954b3220/)
+* **Tope Agboola** [LinkedIn](https://www.linkedin.com/in/olatopeagboola/)

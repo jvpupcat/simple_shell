@@ -9,7 +9,7 @@ int main(void)
 {
 	int i = 0, status;
 	size_t len = 0;
-	char *store_toks[1024],*tokens;
+	char *store_toks[1024], *tokens;
 	int store_execve;
 	char *line = NULL;
 	ssize_t read;
