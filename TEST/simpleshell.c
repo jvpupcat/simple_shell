@@ -9,7 +9,7 @@ int main(void)
 {
 	int i = 0, status;
 	size_t len = 0;
-	char *store_toks[1024], *tokens;
+	char *store_toks[1024], *tokens, *found_path;
 	int store_execve;
 	char *line = NULL;
 	ssize_t read;
@@ -28,17 +28,15 @@ int main(void)
 		}
 		store_toks[i] = NULL;
 		builtin_id(store_toks[0]);
-		_which(line);
-		/*if (strcmp(store_toks[i], builtin.value) == 0)
-		{
-			something something;
-		}*/
+		found_path = _which(line);
+		if (found_path == NULL)
+			found_path = line;
 		pid = fork();
 		if (pid == -1)
 			perror("fork");
 		if (pid == 0)
 		{
-			store_execve = execve(store_toks[0], store_toks, NULL);
+			store_execve = execve(found_path, store_toks, NULL);
 			if (store_execve == -1)
 				return (-1);
 			free(line);

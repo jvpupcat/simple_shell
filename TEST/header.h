@@ -20,6 +20,7 @@ int _putchar(char c);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
+char *_memset(char *s, char b, unsigned int n);
 
 /* MAIN FUNCTIONS */
 char *_getenv(const char *name);
