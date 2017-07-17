@@ -7,31 +7,44 @@
  **/
 char *_which(char *command)
 {
-	char *path, *tokens, store_pathtoks[1024];
-	char *append_slash, *append_ls, *copy_path = NULL;
+	char *path, *tokens, *store_pathtoks = NULL;
+	char *copy_path = NULL;
 	int i;
-	/*struct stat st;*/
+	struct stat st;
 
 	path = _getenv("PATH");
+printf("in which file, path - %s\n", path);
 	copy_path = _strdup(path);
-	tokens = strtok(copy_path, "=");
-	/*printf("%s", tokens);*/
 
-	tokens = strtok(NULL, ":");
-	/*printf("%s", tokens);*/
+	tokens = strtok(copy_path, ":");
 	for (i = 0; tokens != NULL; i++)
 	{
+	printf("in which file, 1st tokens - %s\n", tokens);
+	printf("Before store_pathtoks malloc - %s\n", store_pathtoks);
+		store_pathtoks = malloc(sizeof(char) * 1024);
+		if (store_pathtoks == NULL)
+			return (NULL);
 		_strcpy(store_pathtoks, tokens);
-		/*printf("%s", store_pathtoks[i]);*/
+	printf("after store_pathtoks strcpy %s\n", store_pathtoks);
 		_strcat(store_pathtoks, "/");
-		/*printf("%s", append_slash);*/
+	printf("after 1st strcat %s\n", store_pathtoks);
 		_strcat(store_pathtoks, command);
-		printf("%s", store_pathtoks);
-		/*if (stat(append_ls, &st) == 0)
+	printf("after 2nd strcat %s\n", store_pathtoks);
+		if (stat(store_pathtoks, &st) == 0)
 		{
-			
-		}*/
-		tokens = strtok(NULL, ":");
+	printf("inside stat, store_pathtoks - %s", store_pathtoks);
+			return (store_pathtoks);
+		}
+		else
+		{
+			perror("No Such Command");
+			tokens = strtok(NULL, ":");
+	printf("end of while loop - %s\n", tokens);
+			free(store_pathtoks);
+	printf("after free - %s\n", store_pathtoks);
+			store_pathtoks = NULL;
+	printf("after store_pathtoks = NULL - %s\n", store_pathtoks);
+		}
 	}
 	return (store_pathtoks);
 }

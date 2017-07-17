@@ -23,6 +23,7 @@ char *_strcpy(char *dest, char *src);
 
 /* MAIN FUNCTIONS */
 char *_getenv(const char *name);
+char **copy_env(char **original_env);
 void builtin_id(char *command);
 char *_which(char *command);
 
