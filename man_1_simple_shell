@@ -11,8 +11,7 @@ StemShell's purpose is to mimic the standard command interpreter. The current ve
 However, the purpose of the shell project is to immitate how the shell processes commands.
 
 .SS Overview
-The shell is a command that reads lines from a file or the terminal. The main purpose of the\
-project is to interpret them and execute user commands.
+The shell is a command that reads lines from a file or the terminal. The main purpose of the project is to interpret them and execute user commands.
 The StemShell is supposed to be able to immitate the original shell. It should have the \
 advantage of being able to use commands in both interactive and non-interactive. Commands \
 should be typed directly to the running shell or can be put into a file and the file can \
@@ -45,5 +44,4 @@ Currently, the StemShell does not take operators or quotes.
 .SH BUGS
         The shell is considered incomplete and is scheduled for further development. Bugs exist.
 .SH AUTHOR
-Joann Vuong
-Tope Agboola
+Joann Vuong & Tope Agboola
