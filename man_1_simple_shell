@@ -1,0 +1,49 @@
+.TH StemShell 3 "20 July 2017" "0.1" "Holberton Students Shell Manual"
+.SH NAME
+.B      StemShell (stemshell) - the standard command interpreter
+
+.SH SYNOPSIS
+.PP
+.B      ./stemshell
+
+.SH DESCRIPTION
+StemShell's purpose is to mimic the standard command interpreter. The current version of StemShell is in the process of being further developed. \
+However, the purpose of the shell project is to immitate how the shell processes commands.
+
+.SS Overview
+The shell is a command that reads lines from a file or the terminal. The main purpose of the\
+project is to interpret them and execute user commands.
+The StemShell is supposed to be able to immitate the original shell. It should have the \
+advantage of being able to use commands in both interactive and non-interactive. Commands \
+should be typed directly to the running shell or can be put into a file and the file can \
+executed directly by the shell, using pipes.
+
+.SS Invocation
+An interactive shell generally prompts before each command and is capable of handling \
+programming and command errors. If no arguments are present and the standard input of the \
+shell is connected to a terminal, the shell is considered an interactive shell.
+
+The StemShell is supposed to be capable of handling interactive and non-interactive mode, \
+however, in it's current state, it can only be used to print out /bin/ls, env, and can exit the \
+program.
+
+.SS Argument List Processing
+Currently, there are no options available.
+
+.SS Lexical Structure and Quoting
+Currently, the StemShell does not take operators or quotes.
+
+.SH INITIALIZATION
+.B      compiles with gcc -Wall -Werror -Wextra -pedantic *.c
+.SH ENVIRONMENT
+        PID     The process ID of the child process of the shell.
+
+        PPID    The process ID of the parent process of the shell.
+.SH BUILT-INS
+.B      There are currently two builtins - exit and env.
+
+.SH BUGS
+        The shell is considered incomplete and is scheduled for further development. Bugs exist.
+.SH AUTHOR
+Joann Vuong
+Tope Agboola

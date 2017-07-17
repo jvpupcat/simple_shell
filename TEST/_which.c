@@ -12,20 +12,19 @@ char *_which(char *command)
 	int i;
 	/*struct stat st;*/
 
-	copy_path = copy_path;
 	path = _getenv("PATH");
 	copy_path = _strdup(path);
 	tokens = strtok(copy_path, "=");
-	printf("%s", tokens);
+	/*printf("%s", tokens);*/
 
 	tokens = strtok(NULL, ":");
-	printf("%s", tokens);
+	/*printf("%s", tokens);*/
 	for (i = 0; tokens != NULL; i++)
 	{
-		store_pathtoks[i] = tokens;
-		printf("%s", store_pathtoks[i]);
+		store_pathtoks[i] = _strcpy(store_pathtoks[i], tokens);
+		/*printf("%s", store_pathtoks[i]);*/
 		append_slash = _strcat(store_pathtoks[i], "/");
-		printf("%s", append_slash);
+		/*printf("%s", append_slash);*/
 		append_ls = _strcat(append_slash, command);
 		printf("%s", append_ls);
 		/*if (stat(append_ls, &st) == 0)
@@ -34,6 +33,6 @@ char *_which(char *command)
 		}*/
 		tokens = strtok(NULL, ":");
 	}
-	return (NULL);
+	return (store_pathtoks[i]);
 }
 

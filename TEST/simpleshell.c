@@ -27,7 +27,6 @@ int main(void)
 			i++;
 		}
 		store_toks[i] = NULL;
-		printf("%s\n", store_toks[0]);
 		builtin_id(store_toks[0]);
 		_which(line);
 		/*if (strcmp(store_toks[i], builtin.value) == 0)

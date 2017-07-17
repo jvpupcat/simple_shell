@@ -17,7 +17,7 @@ void builtin_id(char *command)
 
 	for (; matches[i].function != NULL; i++)
 	{
-		if (_strcmp(matches[i].id, "/bin/ls") == 0)
+		if (_strcmp(matches[i].id, command) == 0)
 		{
 			matches[i].function();
 			if (matches[i].function == NULL)
