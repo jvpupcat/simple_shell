@@ -6,12 +6,17 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-/*#define PROMPT "$ "*/
+#include <sys/wait.h>
+#define PROMPT "$ "
+#define DELIM "\n\t\r"
 
 extern char **environ;
 void prompt(void);
 
 /* HELPER FUNCTIONS */
 int _strlen(char *str);
+
+/* MAIN FUNCTIONS */
+int _strtok(char *str);
 
 #endif
