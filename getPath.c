@@ -1,13 +1,12 @@
 #include "header.h"
 
 /**
- * _getenv - function that gets the environment
+ * _getenv - function that gets the path from the environment
  *
  * Return: none
  **/
-char *_getenv(void)
+char *_getenv(const char *name)
 {
-	const char *name = "PATH";
 	int compare, i;
 	char *token;
 

@@ -13,6 +13,7 @@ int main(int ac, char *av[])
 	pid_t pid;
 
 	prompt();
+	_getenv();
 	while ((success = getline(&ptr, &num, stdin) != -1))
 	{
 		tokens = strtok(ptr," \n\t\r");

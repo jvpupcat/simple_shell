@@ -16,7 +16,7 @@ typedef struct environment_variable
 
 extern char **environ;
 void prompt(void);
-char *_getenv(const char *name);
+char *_getenv(void);
 /* HELPER FUNCTIONS */
 int _strlen(char *str);
 
