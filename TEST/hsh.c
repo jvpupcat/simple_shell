@@ -7,20 +7,20 @@
  **/
 int main(void)
 {
-	int i = 0, status;
+	int i = 0, status, store_execve;
 	size_t len = 0;
 	char *store_toks[1024], *tokens, *found_path;
-	int store_execve;
 	char *line = NULL;
 	ssize_t read;
+	struct stat buf;
 	pid_t pid;
 
-	prompt();
+	prompt(STDIN_FILENO, buf);
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
 		if (_strcmp(line, "\n") == 0)
 		{
-			prompt();
+			prompt(STDIN_FILENO, buf);
 			continue;
 		}
 		tokens = strtok(line, " \n\t\r");
@@ -50,7 +50,7 @@ int main(void)
 		{
 			wait(&status);
 		}
-		prompt();
+		prompt(STDIN_FILENO, buf);
 	}
 	free(line);
 	return (0);

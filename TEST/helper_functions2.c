@@ -53,3 +53,17 @@ char *_memset(char *s, char b, unsigned int n)
 	}
 	return (s);
 }
+
+/**
+ * _puts_prompt - function that prints for prompt
+ * @str: variable that passes through function
+ * Return: none
+ **/
+void _puts_prompt(char *str)
+{
+	int len;
+
+	len = _strlen(str);
+
+	write(STDOUT_FILENO, str, len);
+}
