@@ -23,10 +23,11 @@ char *_strcpy(char *dest, char *src);
 char *_memset(char *s, char b, unsigned int n);
 
 /* MAIN FUNCTIONS */
-char *_getenv(const char *name);
-char **copy_env(char **original_env);
+void compare_line(char *str);
 void builtin_id(char *command);
 char *_which(char *command);
+char *_getenv(const char *name);
+char **copy_env(char **original_env);
 
 /* BUILTIN FUNCTIONS */
 /**

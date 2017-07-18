@@ -18,6 +18,11 @@ int main(void)
 	prompt();
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
+		if (_strcmp(line, "\n") == 0)
+		{
+			prompt();
+			continue;
+		}
 		tokens = strtok(line, " \n\t\r");
 		i = 0;
 		while (tokens != NULL)
