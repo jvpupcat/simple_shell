@@ -7,10 +7,10 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#define PROMPT "$ "
 #define DELIM "\n\t\r"
 
 extern char **environ;
-void prompt(void);
 
 /* HELPER FUNCTIONS */
 int _strlen(char *str);
@@ -19,9 +19,16 @@ void _puts(char *str);
 int _putchar(char c);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
+char *_memset(char *s, char b, unsigned int n);
+void _puts_prompt(char *str);
 
 /* MAIN FUNCTIONS */
+void prompt(int fd, struct stat buf);
+void builtin_id(char *command);
+char *_which(char *command);
 char *_getenv(const char *name);
+char **copy_env(char **original_env);
 
 /* BUILTIN FUNCTIONS */
 /**
@@ -35,7 +42,6 @@ typedef struct builtin_s
 	char *id;
 	int (*function)();
 } builtin_t;
-void builtin_id(char *command);
 int sh_exit(void);
 int env(void);
 

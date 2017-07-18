@@ -3,11 +3,12 @@
 /**
  * prompt - function that prints prompt
  *
- * Return: none
+ * Return: 0 upon success
  **/
-void prompt(void)
+void prompt(int fd, struct stat buf)
 {
-	char *prompt = "$ ";
+	fstat(fd, &buf);
 
-	write(STD_FILENO, prompt, 2);
+	if (S_ISCHR(buf.st_mode))
+		_puts_prompt(PROMPT);
 }

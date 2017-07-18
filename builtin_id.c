@@ -7,7 +7,7 @@
  **/
 void builtin_id(char *command)
 {
-	int i = 0;
+	int i;
 
 	builtin_t matches[] = {
 		{"exit", sh_exit},
@@ -15,16 +15,16 @@ void builtin_id(char *command)
 		{NULL, NULL}
 	};
 
-	for (; matches[i].function != NULL; i++)
+	for (i = 0; matches[i].function != NULL; i++)
 	{
 		if (_strcmp(matches[i].id, command) == 0)
 		{
 			matches[i].function();
-			if (matches[i].function == NULL)
-			{
-				perror("Return NULL");
-				exit(EXIT_SUCCESS);
-			}
+		}
+		if (matches[i].function == NULL)
+		{
+			perror("Return NULL");
+			exit(EXIT_SUCCESS);
 		}
 	}
 }
