@@ -2,7 +2,8 @@
 
 /**
  * prompt - function that prints prompt
- *
+ * @fd: file descriptor
+ * @buf: buffer
  * Return: 0 upon success
  **/
 void prompt(int fd, struct stat buf)
