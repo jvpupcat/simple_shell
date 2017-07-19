@@ -2,7 +2,7 @@
 
 /**
  * _getenv - function that gets the environment
- *
+ * @name: string pointer
  * Return: token
  **/
 char *_getenv(const char *name)
@@ -26,7 +26,7 @@ char *_getenv(const char *name)
 }
 
 /**
- * copy_eng - function that copies the environment
+ * copy_env - function that copies the environment
  * @original_env: environment that passes through function
  * Return: double ptr copy_env
  **/
