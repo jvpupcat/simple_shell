@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## The StemShell
 
 <img src="https://gdcf-0916001bcltd.netdna-ssl.com/wp-content/uploads/2016/08/STEM-illustration.jpg?x18098">
