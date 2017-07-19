@@ -23,7 +23,6 @@ $ /bin/ls
 ```
 To use:
 
-=======
 # The StemShell
 
 <img src="https://gdcf-0916001bcltd.netdna-ssl.com/wp-content/uploads/2016/08/STEM-illustration.jpg?x18098">
@@ -141,4 +140,3 @@ Shell builtins are executed internally to the shell, without spawning a new proc
 ## Authors
 * **Joann Vuong** [LinkedIn](https://www.linkedin.com/in/joann-vuong-954b3220/)
 * **Tope Agboola** [LinkedIn](https://www.linkedin.com/in/olatopeagboola/)
->>>>>>> baee0365aefb4fbef1e1b4a3fe74798298a35071
