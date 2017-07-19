@@ -128,9 +128,9 @@ Shell builtins are executed internally to the shell, without spawning a new proc
 	* ``_strdup`` - function that returns pointer to a newly allocated space in memory.
 4. [helper_functions2.c](helper_functions2.c) - file that contains the following helper functions:
 	* ``_strcmp`` - function that compares strings.
-5. [prompt.c](prompt.c) - function that prints the prompt "$".
-6. []()
-7. [man_1_simple_shell](man_1_simple_shell) - file that contains the man page for StemShell
+5. [prompt.c](prompt.c) - function that prints the prompt "$ ".
+6. [hsh.c](hsh.c) - main program that processes the ls command.
+7. [man_1_simple_shell](man_1_simple_shell) - file that contains the man page for StemShell.
 8. [README.md](README.md) - files that contains the description for the assignment. Example of how to use Stemshell is included.
 
 ## Known Bugs
