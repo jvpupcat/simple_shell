@@ -7,11 +7,9 @@
  **/
 int main(void)
 {
-	int i = 0, status, store_execve;
+	int i, status, store_execve, read;
 	size_t len = 0;
-	char *store_toks[1024], *tokens, *found_path;
-	char *line = NULL;
-	ssize_t read;
+	char *store_toks[1024], *tokens, *found_path, *line = NULL;
 	struct stat buf;
 	pid_t pid;
 
@@ -20,16 +18,13 @@ int main(void)
 	{
 		if (_strcmp(line, "\n") == 0)
 		{
-			prompt(STDIN_FILENO, buf);
-			continue;
+			prompt(STDIN_FILENO, buf); continue;
 		}
-		tokens = strtok(line, " \n\t\r");
-		i = 0;
-		while (tokens != NULL)
+		tokens = strtok(line, "32\n\t\r");
+		for (i = 0; tokens != NULL; i++)
 		{
 			store_toks[i] = tokens;
-			tokens = strtok(NULL, " \n\t\r");
-			i++;
+			tokens = strtok(NULL, "32\n\t\r");
 		}
 		store_toks[i] = NULL;
 		builtin_id(store_toks[0]);
@@ -47,11 +42,9 @@ int main(void)
 			free(line);
 		}
 		else
-		{
 			wait(&status);
-		}
 		prompt(STDIN_FILENO, buf);
 	}
-	free(line);
+	free(line); free(tokens);
 	return (0);
 }
