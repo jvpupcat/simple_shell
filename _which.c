@@ -2,7 +2,7 @@
 
 /**
  * _which - function that checks for user permission
- * @filename: files that need to be checked
+ * @command: files that need to be checked
  * Return: NULL
  **/
 char *_which(char *command)
