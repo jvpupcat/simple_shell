@@ -10,7 +10,7 @@ The shell is a command that reads lines from either a file or the terminal, inte
 
 ## Overview of the StemShell
 
-The Stemshell is an emulation of the Shell and attempts to take in the ls command. It features interactive and non-interactive use. The only command that can currently be typed directly to the running shell is the /bin/ls command. Flags can also be typed into the command line. 
+The Stemshell is an emulation of the Shell and attempts to take in the ls command. It features interactive and non-interactive use. The only command that can currently be typed directly to the running shell is the /bin/ls command. Flags can also be typed into the command line.
 
 For example:
 
@@ -35,14 +35,14 @@ The shell is a command that reads lines from either a file or the terminal, inte
 
 ## Overview: StemShell
 
-The Stemshell is an emulation of the Shell and attempts to take in and execute the ls command. It features interactive and non-interactive use. The only command that can currently be typed directly to the running shell is the /bin/ls command. Flags can also be typed into the command line and execution of that command is correct. 
+The Stemshell is an emulation of the Shell and attempts to take in and execute the ls command. It features interactive and non-interactive use. The only command that can currently be typed directly to the running shell is the /bin/ls command. Flags can also be typed into the command line and execution of that command is correct.
 
 To use:
 
 ```
 vagrant@vagrant-ubuntu-trusty-64:~$ gcc -Wall -Werror -Wextra -pedantic simpleshell.c -o simpleshell
 vagrant@vagrant-ubuntu-trusty-64:~$ ./simpleshell
-$ 
+$
 ```
 1. Compile with `gcc -Wall -Werror -Wextra -pedantic *.c -o stemshell`
 2. To run, type `./stemshell`
