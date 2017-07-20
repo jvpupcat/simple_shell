@@ -8,7 +8,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #define PROMPT "$ "
-#define DELIM "\n\t\r"
 
 extern char **environ;
 
