@@ -109,7 +109,7 @@ Shell builtins are executed internally to the shell, without spawning a new proc
 8. [README.md](README.md) - files that contains the description for the assignment. Example of how to use Stemshell is included.
 
 ## Known Bugs
-- [x] When enter is hit without any user input, shell segfaults
+- [x] Not all error messages are accounted for
 - [x] Memory leaks exist - check valgrind
 
 ## Authors
