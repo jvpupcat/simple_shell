@@ -15,7 +15,7 @@ char *_getenv(const char *name)
 	for (i = 0; env_copy[i] != '\0'; i++)
 	{
 		token = strtok(env_copy[i], "=");
-		compare = strcmp(name, token);
+		compare = _strcmp(name, token);
 		if (compare == 0)
 		{
 			token = strtok(NULL, "\0");
