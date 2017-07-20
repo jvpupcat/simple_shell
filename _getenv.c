@@ -5,7 +5,7 @@
  * @name: string pointer
  * Return: token
  **/
-char *_getenv(const char *name)
+char *_getenv(char *name)
 {
 	int compare, i;
 	char *token, **env_copy;

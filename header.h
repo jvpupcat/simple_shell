@@ -26,7 +26,7 @@ void _puts_prompt(char *str);
 void prompt(int fd, struct stat buf);
 void builtin_id(char *command);
 char *_which(char *command);
-char *_getenv(const char *name);
+char *_getenv(char *name);
 char **copy_env(char **original_env);
 
 /* BUILTIN FUNCTIONS */
