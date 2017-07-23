@@ -15,12 +15,12 @@ The Stemshell is an emulation of the Shell and attempts to take in and execute t
 To use:
 
 ```
-vagrant@vagrant-ubuntu-trusty-64:~$ gcc -Wall -Werror -Wextra -pedantic simpleshell.c -o simpleshell
+vagrant@vagrant-ubuntu-trusty-64:~$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 vagrant@vagrant-ubuntu-trusty-64:~$ ./simpleshell
 $
 ```
-1. Compile with `gcc -Wall -Werror -Wextra -pedantic *.c -o stemshell`
-2. To run, type `./stemshell`
+1. Compile with `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+2. To run, type `./hsh`
 3. A prompt should appear. For Stemshell, the prompt is '$'
 4. At the prompt, type in command `/bin/ls` or `/bin/ls -l`
 
